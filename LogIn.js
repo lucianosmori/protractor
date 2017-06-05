@@ -22,7 +22,8 @@ describe('Testing the login page', function() {
 		var EC = protractor.ExpectedConditions;
 		var omitir = element(by.css(bt_omitir));
 		var isClickable = EC.elementToBeClickable(omitir);
-		browser.wait(isClickable,5000); //now options should have been loaded by now
+		expect(omitir.isPresent()).toBe(true);
+		browser.wait(isClickable,0); //now options should have been loaded by now
 	});
 }); 
 
