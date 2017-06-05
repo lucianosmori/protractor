@@ -1,2 +1,0 @@
-# protractor
-Back up scenarios
