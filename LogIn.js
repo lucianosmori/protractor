@@ -3,8 +3,9 @@ describe('Testing the login page', function() {
 	var fld_user = '.user.col.col-90.col-offset-10';
 	var fld_pass = '.pass.col.col-90.col-offset-10';
 	var bt_omitir = '.button.rounded.button-full.button-calm.white-color';
+	var bt_menusec = 'button.transparent-btn.hamburguer-button';
 	
-    it('should be able to click on the login button', function() {	
+    it('it should loguearse', function() {	
 //Ingresar datos y presionar INGRESAR
 		var user = element(by.css(fld_user));
 		var password = element(by.css(fld_pass));
@@ -18,12 +19,20 @@ describe('Testing the login page', function() {
 		password.clear().sendKeys('Desa1234');       
         element(by.css(bt_login)).click();
     });
-	it('should be able to click on the login button', function() {
+	it('it should get through onboarding', function() {
 		var EC = protractor.ExpectedConditions;
 		var omitir = element(by.css(bt_omitir));
 		var isClickable = EC.elementToBeClickable(omitir);
 		expect(omitir.isPresent()).toBe(true);
-		browser.wait(isClickable,0); //now options should have been loaded by now
+		element(by.css(bt_omitir)).click();
+		//browser.wait(isClickable,0); //debería esperar?
+	});
+	it('should expand secundary menu', function() {
+		var menusec = element(by.css(bt_menusec));
+//espera hamburger
+		expect(menusec.isPresent()).toBe(true);
+		element(by.css(bt_menusec)).click();
+		
 	});
 }); 
 
