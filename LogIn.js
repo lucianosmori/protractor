@@ -17,15 +17,17 @@ describe('Testing the login page', function() {
 		user.clear().sendKeys('23765258');
 		password.clear().sendKeys('Desa1234');       
         element(by.css(bt_login)).click();
-    });
-	it('should be able to click on the OMITIR button', function() {
+		
 		var EC = protractor.ExpectedConditions;
 		var omitir = element(by.css(bt_omitir));
 		var isClickable = EC.elementToBeClickable(omitir);
 		expect(omitir.isPresent()).toBe(true);
 		//element(by.css(bt_omitir)).click();
-		browser.wait(isClickable,5000); //now options should have been loaded by now
-	});
+		browser.wait(isClickable,5000); 
+	
+
+	}); 
+		
 }); 
 
 //TO-DO Limpiar scrip
