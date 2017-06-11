@@ -24,7 +24,7 @@ describe('Testing the login page', function() {
 		var isClickable = EC.elementToBeClickable(omitir);
 		expect(omitir.isPresent()).toBe(true);
 		//element(by.css(bt_omitir)).click();
-		browser.wait(isClickable,5 * 1000); //now options should have been loaded by now
+		browser.wait(isClickable,5000); //now options should have been loaded by now
 	});
 }); 
 
