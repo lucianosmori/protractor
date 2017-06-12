@@ -4,8 +4,8 @@ describe('Testing the login page', function() {
 	var fld_pass = '.pass.col.col-90.col-offset-10';
 	var bt_omitir = '.button.rounded.button-full.button-calm.white-color';
 	var bt_menusec= '.ion-navicon-round.font-xl';
-	
-    it('should be able to click on the login button', function() {	
+
+    it('should be able to click on the login button', function() {
 //Ingresar datos y presionar INGRESAR
 		var user = element(by.css(fld_user));
 		var password = element(by.css(fld_pass));
@@ -14,9 +14,9 @@ describe('Testing the login page', function() {
 		expect(user.isPresent()).toBe(true);
 		expect(password.isPresent()).toBe(true);
 		expect(login.isPresent()).toBe(true);
-		
+
 		user.clear().sendKeys('23765258');
-		password.clear().sendKeys('Desa1234');       
+		password.clear().sendKeys('Desa1234');
         element(by.css(bt_login)).click();
     });
 	it('should be able to click on the OMITIR button', function() {
@@ -27,15 +27,15 @@ describe('Testing the login page', function() {
 		browser.wait(isClickable,5000); //now options should have been loaded by now
 		element(by.css(bt_omitir)).click();
 		browser.sleep(4000);
-		// 
+		//
 		var EC2 = protractor.ExpectedConditions;
 		var menusec = element(by.css(bt_menusec));
 		var isClickable2 = EC2.elementToBeClickable(menusec);
 		expect(menusec.isPresent()).toBe(true);
-		browser.wait(isClickable2,5000); //now options should have been loaded by now
+		//browser.wait(isClickable2,5000); //now options should have been loaded by now
 		browser.sleep(4000);
 	});
-}); 
+});
 
 //TO-DO Limpiar scrip
 //Repositorio
