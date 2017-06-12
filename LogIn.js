@@ -3,6 +3,7 @@ describe('Testing the login page', function() {
 	var fld_user = '.user.col.col-90.col-offset-10';
 	var fld_pass = '.pass.col.col-90.col-offset-10';
 	var bt_omitir = '.button.rounded.button-full.button-calm.white-color';
+	var bt_menusec= '.button.transparent-btn.hamburguer-button';
 	
     it('should be able to click on the login button', function() {	
 //Ingresar datos y presionar INGRESAR
@@ -25,6 +26,13 @@ describe('Testing the login page', function() {
 		expect(omitir.isPresent()).toBe(true);
 		browser.wait(isClickable,5000); //now options should have been loaded by now
 		element(by.css(bt_omitir)).click();
+		browser.sleep(4000);
+		// 
+		var EC2 = protractor.ExpectedConditions;
+		var menusec = element(by.css(bt_menusec));
+		var isClickable2 = EC2.elementToBeClickable(menusec);
+		expect(menusec.isPresent()).toBe(true);
+		browser.wait(isClickable2,5000); //now options should have been loaded by now
 		browser.sleep(4000);
 	});
 }); 
