@@ -6,11 +6,11 @@ describe('Testing the login page', function() {
 	var bt_menusec= '.button.transparent-btn.hamburguer-button';
 	
     it('should be able to click on the login button', function() {	
-	//Ingresar datos y presionar INGRESAR
+//Ingresar datos y presionar INGRESAR
 		var user = element(by.css(fld_user));
 		var password = element(by.css(fld_pass));
 		var login = element(by.css(bt_login));
-	//Registrar resultados
+//Registrar resultados
 		expect(user.isPresent()).toBe(true);
 		expect(password.isPresent()).toBe(true);
 		expect(login.isPresent()).toBe(true);
@@ -18,19 +18,23 @@ describe('Testing the login page', function() {
 		user.clear().sendKeys('23765258');
 		password.clear().sendKeys('Desa1234');       
         element(by.css(bt_login)).click();
-//Onboarding		
+    });
+	it('should be able to click on the OMITIR button', function() {
 		var EC = protractor.ExpectedConditions;
 		var omitir = element(by.css(bt_omitir));
 		var isClickable = EC.elementToBeClickable(omitir);
 		expect(omitir.isPresent()).toBe(true);
-		//element(by.css(bt_omitir)).click();
-		browser.wait(isClickable,0000); 
-		
-		
-	
-
-	}); 
-		
+		browser.wait(isClickable,5000); //now options should have been loaded by now
+		element(by.css(bt_omitir)).click();
+		browser.sleep(4000);
+		// 
+		var EC2 = protractor.ExpectedConditions;
+		var menusec = element(by.css(bt_menusec));
+		var isClickable2 = EC2.elementToBeClickable(menusec);
+		expect(menusec.isPresent()).toBe(true);
+		browser.wait(isClickable2,5000); //now options should have been loaded by now
+		browser.sleep(4000);
+	});
 }); 
 
 //TO-DO Limpiar scrip
