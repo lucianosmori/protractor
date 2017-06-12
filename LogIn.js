@@ -3,7 +3,7 @@ describe('Testing the login page', function() {
 	var fld_user = '.user.col.col-90.col-offset-10';
 	var fld_pass = '.pass.col.col-90.col-offset-10';
 	var bt_omitir = '.button.rounded.button-full.button-calm.white-color';
-	var bt_menusec= '.button.transparent-btn.hamburguer-button';
+	var bt_menusec= '.ion-navicon-round.font-xl';
 	
     it('should be able to click on the login button', function() {	
 //Ingresar datos y presionar INGRESAR
