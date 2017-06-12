@@ -23,7 +23,7 @@ describe('Testing the login page', function() {
 		var omitir = element(by.css(bt_omitir));
 		var isClickable = EC.elementToBeClickable(omitir);
 		expect(omitir.isPresent()).toBe(true);
-		browser.wait(isClickable,5000); //now options should have been loaded by now
+		browser.wait(isClickable,5000);
 		element(by.css(bt_omitir)).click();
 		browser.sleep(4000);
 	});
